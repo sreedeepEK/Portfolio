@@ -1,0 +1,91 @@
+/* Custom styles for code blocks */
+pre[class*="language-"] {
+    background-color: #0d0d0d; /* Very dark, near-black background */
+    border-radius: 6px;
+    padding: 1.5em;
+    margin: 1em 0;
+    overflow: auto;
+    max-height: none; 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+  
+}
+
+code[class*="language-"] {
+    font-family: 'Consolas', 'Monaco', 'Andale Mono', 'Ubuntu Mono', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #d4d4d4; 
+}
+
+.language-python .token.keyword {
+    color: #569cd6; 
+}
+
+.language-python .token.function {
+    color: #dcdcaa; /
+}
+
+.language-python .token.class-name {
+    color: #4ec9b0; 
+}
+
+.language-python .token.string {
+    color: #ce9178; 
+}
+
+.language-python .token.number {
+    color: #b5cea8;
+}
+
+.language-python .token.comment {
+    color: #6a9955; 
+}
+
+.language-python .token.operator {
+    color: #d4d4d4; 
+}
+
+.language-python .token.builtin {
+    color: #4ec9b0; 
+}
+
+.language-python .token.punctuation {
+    color: #d4d4d4; 
+}
+
+.language-python .token.decorator {
+    color: #dcdcaa; 
+}
+
+.blog-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1em auto;
+    border-radius: 6px; 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+
+
+.blog-content figure {
+    margin: 1em 0;
+}
+
+.blog-content figure img {
+    width: 100%;
+    height: auto;
+}
+
+.blog-content figcaption {
+    text-align: center;
+    font-size: 0.9em;
+    color: #888;
+    margin-top: 0.5em;
+}
+
+@media (max-width: 768px) {
+    .blog-content img {
+        width: 100%;
+        height: auto;
+    }
+}

@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building KNN</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-okaidia.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/blog-styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
+</head>
+</head>
+<body class="blog-page">
+    <nav>
+        <a href="../index.html">home</a>
+        <a href="../blog.html">blog</a> 
+        <a href="../projects.html">work</a>
+    </nav>
+    <main class="blog-content">
+        <h1>Building K Nearest Neighbors from Scratch</h1>
+        <p class="date">Aug 21, 2024</p>
+        
+<h3 id="introduction">Introduction</h3>
+<p>Hey guys! So I had this random thought today, why not try to build a machine learning algorithm from scratch? I figured it&#39;d be cool to implement K-Nearest Neighbors and see how it goes. In this blog post I&#39;m gonna walk you through my attempt. If you spot any errors in my explanation or code, please let me know :)</p>
+<p>So yeah, KNN is a simple yet powerful machine learning algorithm used for both classification and regression tasks. Read more <a href="https://www.mongodb.com/resources/basics/knn-search">here</a>.</p>
+<p><strong>PS</strong>: I picked KNN because it&#39;s relatively simple but still super useful.</p>
+<h3 id="core-idea-of-the-algorithm">Core idea of the algorithm</h3>
+<p>The core idea behind KNN is straightforward:</p>
+<ol>
+<li>When given a new data point to classify or predict, KNN looks at the &#39;K&#39; closest points in the training dataset.</li>
+<li>For classification, it assigns the most common class among these K neighbors.</li>
+<li>For regression, it calculates the average value of these K neighbors.</li>
+</ol>
+<h3 id="python-implementation">Python Implementation</h3>
+<p>Alright, let&#39;s dive into the code! Let&#39;s build our KNN from scratch, woohoo let&#39;s get coding!</p>
+<p>First things first, we need some built-in Python modules and numpy:</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> math
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+<span class="hljs-title">from</span> collections <span class="hljs-keyword">import</span> Counter
+</code></pre>
+<p>Calculating the euclidian distance:</p>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">euclidean_distance</span><span class="hljs-params">(x1, x2)</span></span>:
+    <span class="hljs-keyword">return</span> math.sqrt(np.sum((x1 - x2) ** <span class="hljs-number">2</span>))
+</code></pre>
+<p>This function takes two points and tells us how far apart they are.</p>
+<h3 id="knn-class">KNN class</h3>
+<pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">KNN</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(<span class="hljs-keyword">self</span>, k=<span class="hljs-number">3</span>)</span></span>:
+        <span class="hljs-keyword">self</span>.k = k
+</code></pre>
+<p>We start by initializing our class. The k parameter is how many neighbors we want to look at. We&#39;re setting a default of 3, but feel free to change it!</p>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">fit</span><span class="hljs-params">(<span class="hljs-keyword">self</span>, X, y)</span></span>:
+        <span class="hljs-keyword">self</span>.X_train = X
+        <span class="hljs-keyword">self</span>.y_train = y
+</code></pre>
+<p>The fit method is just storing our training data.</p>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_predict</span><span class="hljs-params">(<span class="hljs-keyword">self</span>, x)</span></span>:
+     <span class="hljs-comment"># Compute distances between x and all examples in the training set</span>
+     distances = [euclidean_distance(x, x_train) <span class="hljs-keyword">for</span> x_train <span class="hljs-keyword">in</span> <span class="hljs-keyword">self</span>.X_train]
+
+     <span class="hljs-comment"># Sort by distance and return indices of the first k neighbors</span>
+     k_idx = np.argsort(distances)[<span class="hljs-symbol">:self</span>.k]
+
+     <span class="hljs-comment"># Extract the labels of the k nearest neighbor training samples</span>
+     knn_labels = [<span class="hljs-keyword">self</span>.y_train[i] <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> k_idx]  
+
+     <span class="hljs-comment"># return the most common class label</span>
+     most_common = Counter(knn_labels).most_common(<span class="hljs-number">1</span>)
+     <span class="hljs-keyword">return</span> most_common[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>]
+</code></pre>
+<p>So let me explain this one by one ,</p>
+<ol>
+<li>We calculate the distance between our point and all training points.</li>
+<li>We find the k closest points.</li>
+<li>We look at the labels of these k points.</li>
+<li>We return the most common label. That&#39;s our prediction!</li>
+</ol>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">predict</span><span class="hljs-params">(<span class="hljs-keyword">self</span>, X)</span></span>:
+     y_pred = [<span class="hljs-keyword">self</span>._predict(x) <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> X]
+     <span class="hljs-keyword">return</span> np.array(y_pred)
+</code></pre>
+<p>And there we have it! Pretty cool, huh?</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>This KNN implementation might not be as optimized as the ones you&#39;ll find in libraries, but it gets the job done and, more importantly, helps you understand what&#39;s really going on under the hood.You can find the full implementation on <a href="https://github.com/sreedeepEK/K-Nearest-Neighbour">GitHub</a>.</p>
+<p>Feel free to clone it, play around with it make it your own. 
+Happy coding! :)</p>
+
+</main>
+<footer>
+    <hr>
+    <section class="footer-links">
+        <h3>find me elsewhere online:</h3>
+        <ul class="links">
+            <li><a href="mailto:sreedeepek.95@gmail.com">email<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a></li>
+            <li><a href="https://x.com/sreedeepEK">x.com<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a></li>
+            <li><a href="https://github.com/sreedeepEK">github<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a></li>
+            <li><a href="https://www.linkedin.com/in/sreedeepek/">linkedin<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a></li>
+        </ul>
+    </section>
+</footer>
+<script src="../js/script.js"></script>
+</body>
+</html>
