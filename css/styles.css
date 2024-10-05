@@ -171,6 +171,7 @@ a:hover {
 } 
 
 
+
 .blog-posts h2 {
   font-size: 18px;
   font-weight: 500;
@@ -348,7 +349,7 @@ hr {
   }
 
   .bio {
-    font-size: 14px;
+    font-size: 14.5px;
   }
 
   .blog-content h1 {
@@ -360,15 +361,15 @@ hr {
   }
 
   .blog-content h3 {
-    font-size: 18px; /* Further reduced font size */
+    font-size: 25px; /* Further reduced font size */
   }
 
   .blog-post h2 {
-    font-size: 14px;
+    font-size: 15px;
   }
 
   .blog-post .description {
-    font-size: 12px; /* Further reduced font size */
+    font-size: 14px; /* Further reduced font size */
   }
 
   .blog-post a .date,
@@ -390,6 +391,8 @@ hr {
   }
 
   .contact p {
-    font-size: 10px; /* Further reduced font size for mobile */
+    font-size: 10px; /* Further reduced font size for mobile */ 
+
+
   }
 }
