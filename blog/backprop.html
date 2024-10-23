@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backpropagation Simplified</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-okaidia.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/blog-styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
+</head>
+<body class="blog-page">
+    <nav>
+        <a href="../index.html">home</a>
+        <a href="../blog.html">blog</a> 
+        <a href="../projects.html">work</a>
+    </nav>
+    <main class="blog-content">
+        <h1>Backpropagation Simplified :)</h1>
+        <p class="date">Oct 23, 2024</p>
+        
+        <h3 id="introduction">Introduction</h3>
+        <p>Alright, let's break down <strong>backpropagation</strong>—a fancy word that might sound intimidating but really isn't. 
+        Think of it like teaching a dog to fetch! Every time it messes up, you give it a little correction. Backpropagation is like that, but instead of training dogs, we’re training neural networks.</p>
+        
+        <h3 id="what-is-backpropagation">What’s Backpropagation?</h3>
+        <p>Backpropagation is a two-step process:</p>
+        <ol>
+            <li><strong>Forward Pass:</strong> The model makes a prediction—like tossing a dart and hoping for a bullseye.</li>
+            <li><strong>Backward Pass:</strong> If it misses, the model calculates how wrong it was, and then tweaks its aim for next time by adjusting the <em>gradients</em>.</li>
+        </ol>
+
+        <h3 id="gradient-descent">Gradient Descent: The GPS for Your Model</h3>
+        <p>Once the model knows how far off it was, it uses <strong>gradient descent</strong> to find the right direction to improve its performance. 
+        Think of it like a GPS: if you make a wrong turn, it recalculates your route. But here's the trick—how fast you adjust (called the <em>learning rate</em>) matters. Too fast, and you might overshoot; too slow, and you’ll take forever to get there.</p>
+
+        <h3 id="key-concepts">Key Concepts</h3>
+        <ul>
+            <li><strong>Gradients:</strong> These are like little arrows pointing your model in the right direction after every mistake. They tell the model which way to adjust its parameters.</li>
+            <li><strong>Weights:</strong> Think of weights as knobs that control how much influence input data has on the prediction.</li>
+            <li><strong>Biases:</strong> Extra knobs that help the model adjust more flexibly. Like adding extra seasoning to a dish—just a bit more control to make things perfect!</li>
+            <li><strong>Loss Function:</strong> The scorekeeper! It tells the model how far off it is. The lower the score (loss), the better the predictions.</li>
+            <li><strong>Learning Rate:</strong> Controls how fast the model adjusts. Fast learning might be risky, while slow learning is safer but takes longer.</li>
+        </ul>
+
+        <h3 id="conclusion">Conclusion</h3>
+        <p>So there you have it! Backpropagation in a nutshell. It’s all about learning from mistakes and improving one step at a time. 
+        Now you can explain it to anyone and sound like a pro. Happy coding!</p>
+
+    </main>
+    <footer>
+        <hr>
+        <section class="footer-links">
+            <h3>Find me elsewhere online:</h3>
+            <ul class="links">
+                <li><a href="mailto:sreedeepek.95@gmail.com">email<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a></li>
+                <li><a href="https://x.com/sreedeepEK">x.com<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a></li>
+                <li><a href="https://github.com/sreedeepEK">github<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a></li>
+                <li><a href="https://www.linkedin.com/in/sreedeepek/">linkedin<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a></li>
+            </ul>
+        </section>
+    </footer>
+    <script src="../js/script.js"></script>
+</body>
+</html>
