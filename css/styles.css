@@ -308,11 +308,15 @@ a:hover {
 }
 
 footer {
+  position: relative; /* Allow footer to flow with content */
   text-align: left;
   padding: 20px 0; 
-  flex-shrink: 0;
+  bottom: 0px;
   font-size: 13px;
+  background-color: #000; /* Optional: Set a background color */
+  color: #fff; /* Optional: Set text color */
 }
+
 
 hr {
   border: none;
