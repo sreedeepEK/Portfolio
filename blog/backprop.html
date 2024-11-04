@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding Backprop</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-okaidia.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/blog-styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
+</head>
+<body class="blog-page">
+    <nav>
+        <a href="../index.html">home</a>
+        <a href="../projects.html">work</a>
+        <a href="../blog.html">blog</a> 
+    </nav>
+    <main class="blog-content">
+        <h1>Understanding Backpropagation</h1>
+        <p class="date">Nov 5, 2024</p>
+
+        <p>Backpropagation is a core algorithm in machine learning, especially for training neural networks. Ever wondered how a neural network “learns”? Backpropagation is the feedback loop that fine-tunes the model, helping it make better predictions. Let's break down how it works in a simple, approachable way.</p>
+
+        <h3 id="what-is-backpropagation">What is Backpropagation?</h3>
+        <p>Backpropagation is an optimization algorithm for updating the weights in a neural network by minimizing errors. Imagine teaching a child to throw a ball. After each throw, you adjust the child’s posture and hand position slightly, helping them improve. Backpropagation acts similarly by tweaking weights in each layer to reduce error.</p>
+
+        <h3 id="why-do-we-need-backpropagation">Why Do We Need it?</h3>
+        <p>Neural networks start with random weights, so they don’t know how to make accurate predictions. To make them “learn,” we need a way to find optimal weights. That’s where backpropagation comes in. It systematically adjusts weights, helping the network find patterns in the data.</p>
+
+        <h3 id="how-backpropagation-works">How this works under the hood</h3>
+        <ol>
+            <li><strong>Forward Pass:</strong> Input data is passed through the network, layer by layer, to produce an output prediction.</li>
+            <li><strong>Calculate the Error:</strong> The network’s output is compared to the true value. The difference (error) is measured by a loss function, like Mean Squared Error or Cross-Entropy.</li>
+            <li><strong>Backward Pass:</strong> Moving from output back to input, we calculate how much each weight contributed to the error using the <em>chain rule</em> of calculus.</li>
+            <li><strong>Update the Weights:</strong> Each weight is adjusted slightly (using a learning rate) to reduce the error. This process is repeated for each epoch until the error minimizes.</li>
+        </ol>
+
+        <h3 id="key-concepts-to-remember">Keep this in mind</h3>
+        <ul>
+            <li><strong>Gradient Descent:</strong> The algorithm that backpropagation uses to optimize weights by finding the lowest point on the error curve.</li>
+            <li><strong>Learning Rate:</strong> The step size of each weight adjustment. High learning rates make big changes, low rates make small changes.</li>
+            <li><strong>Epochs:</strong> The number of times backpropagation runs over the entire training dataset to fine-tune weights.</li>
+        </ul>
+        
+        <h3 id="conclusion">Conclusion</h3>
+        <p>So yeah, backprop is at the heart of training neural networks. By systematically adjusting weights based on errors, it helps networks learn complex tasks like image recognition and language understanding. :)</p>
+
+        <h3 id="references">References</h3>
+        <ul>
+            <li><a href="https://www.reddit.com/r/deeplearning/comments/lqfix4/can_anybody_teacheli5_me_back_propagation_in/">Reddit: deeplearning subreddit</a></li>
+            <li><a href="https://karpathy.medium.com/yes-you-should-understand-backprop-e2f06eab496b">Karpathy: Understanding Backpropagation</a></li>
+        </ul>
+
+        
+    </main>
+
+    <footer>
+        <hr>
+        <section class="footer-links">
+            <h3>Find me elsewhere online:</h3>
+            <ul class="links">
+                <li><a href="mailto:example@example.com">Email<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a></li>
+                <li><a href="https://twitter.com/yourusername">Twitter<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a></li>
+                <li><a href="https://github.com/yourusername">GitHub<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a></li>
+                <li><a href="https://linkedin.com/in/yourusername">LinkedIn<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a></li>
+            </ul>
+        </section>
+    </footer>
+    <script src="../js/script.js"></script>
+</body>
+</html>
