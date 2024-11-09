@@ -98,7 +98,6 @@ nav a.active {
   text-decoration: underline;
 }
 
-
 h1, h2, h3 {
   font-weight: 500;
 }
@@ -170,8 +169,6 @@ a:hover {
   margin-top: 30px;
 } 
 
-
-
 .blog-posts h2 {
   font-size: 18px;
   font-weight: 500;
@@ -218,6 +215,7 @@ a:hover {
   margin-top: 25px;
   margin-bottom: 10px;
 }
+
 .blog-post {
   margin-bottom: 10px;
 }
@@ -238,6 +236,7 @@ a:hover {
   text-decoration: underline;
   text-underline-offset: 5px;
 }
+
 .blog-post a .date {
   text-decoration: none;
   color: #888; /* Adjust this to match your date color */
@@ -255,7 +254,7 @@ a:hover {
 
 .blog-post .description { 
   font-size: 14px;
-  color: #bbbbbb;; 
+  color: #bbbbbb; 
 }
 
 .date {
@@ -309,7 +308,7 @@ a:hover {
 
 footer {
   position: relative; /* Allow footer to flow with content */
-  text-align: left;
+  text-align: left; /* Keep footer text alignment unchanged */
   padding: 20px 0; 
   bottom: 0px;
   font-size: 13px;
@@ -317,15 +316,11 @@ footer {
   color: #fff; /* Optional: Set text color */
 }
 
-
 hr {
   border: none;
   border-top: 1px solid #333;
   margin: 20px 0;
 }
-
-
-
 
 @media (max-width: 768px) {
   .two-column {
@@ -339,6 +334,7 @@ hr {
 
   nav a {
     font-size: 16.5px; /* Adjusted font size for mobile */
+    text-align: center; /* Center align navigation links for mobile */
   }
 
   h1 {
@@ -355,6 +351,7 @@ hr {
 
   .bio {
     font-size: 14.5px;
+    text-align: justify; /* Justify text for a neat appearance */
   }
 
   .blog-content h1 {
@@ -371,10 +368,12 @@ hr {
 
   .blog-post h2 {
     font-size: 15px;
+    text-align: left; /* Keep blog post titles aligned to the left */
   }
 
   .blog-post .description {
     font-size: 14px; /* Further reduced font size */
+    text-align: justify; /* Justify text for a neat appearance */
   }
 
   .blog-post a .date,
@@ -389,6 +388,7 @@ hr {
   footer {
     font-size: 14px;
     margin-bottom: 40px; /* Add margin to move footer down */
+    text-align: center; /* Center align footer text for mobile */
   }
 
   .contact h2 {
@@ -397,7 +397,5 @@ hr {
 
   .contact p {
     font-size: 10px; /* Further reduced font size for mobile */ 
-
-
   }
 }
