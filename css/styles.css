@@ -334,7 +334,7 @@ hr {
 
   nav a {
     font-size: 16.5px; /* Adjusted font size for mobile */
-    text-align: center; /* Center align navigation links for mobile */
+    /* Center align navigation links for mobile */
   }
 
   h1 {
