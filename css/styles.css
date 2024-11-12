@@ -334,7 +334,6 @@ hr {
 
   nav a {
     font-size: 16.5px; /* Adjusted font size for mobile */
-    /* Center align navigation links for mobile */
   }
 
   h1 {
@@ -351,7 +350,6 @@ hr {
 
   .bio {
     font-size: 14.5px;
-    text-align: justify; /* Justify text for a neat appearance */
   }
 
   .blog-content h1 {
@@ -368,12 +366,10 @@ hr {
 
   .blog-post h2 {
     font-size: 15px;
-    text-align: left; /* Keep blog post titles aligned to the left */
   }
 
   .blog-post .description {
     font-size: 14px; /* Further reduced font size */
-    text-align: justify; /* Justify text for a neat appearance */
   }
 
   .blog-post a .date,
@@ -388,7 +384,6 @@ hr {
   footer {
     font-size: 14px;
     margin-bottom: 40px; /* Add margin to move footer down */
-    text-align: center; /* Center align footer text for mobile */
   }
 
   .contact h2 {
