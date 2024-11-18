@@ -49,17 +49,18 @@
 html, body {
   font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   background-color: #000;
+  height: 100%;
   color: #fff;
   line-height: 1.5;
   margin: 0; 
   min-height: 100vh;
   padding: 20px;
-  max-width: 720px;
+  max-width: 750px;
   margin: 0 auto;
 } 
 
 main {
-  flex: 1 0 auto; 
+  flex: 1 ; 
 }
 
 code, kbd, pre, samp {
@@ -160,6 +161,37 @@ a:hover {
   margin: 5px 0;
   color: #ffffff;
 }
+
+
+
+/* Skills Section Styles */
+#skills {
+  margin-top: 30px;
+  text-align: left; /* Center the heading */
+}
+
+#skills h2 {
+  font-size: 20px; /* Smaller font size */
+  color: #f5f5f5; /* Light color for visibility */
+}
+
+.skills-container {
+  display: flex; /* Use flexbox for layout */
+  flex-wrap: wrap; /* Allow items to wrap */
+  justify-content: left; /* Center items */
+  margin-top: 10px; /* Space above skills */
+}
+
+.skill {
+  background-color: #333; /* Dark background for skills */
+  color: #ffffff; 
+  padding: 5px 7px; 
+  margin: 5px; 
+  border-radius: 5px; 
+  font-size: 11px; 
+}
+
+
 
 .description {
   color: #ffffff;
@@ -307,10 +339,8 @@ a:hover {
 }
 
 footer {
-  position: relative; /* Allow footer to flow with content */
-  text-align: left; /* Keep footer text alignment unchanged */
+  margin-top: 0; 
   padding: 20px 0; 
-  bottom: 0px;
   font-size: 13px;
   background-color: #000; /* Optional: Set a background color */
   color: #fff; /* Optional: Set text color */
