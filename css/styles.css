@@ -59,6 +59,12 @@ html, body {
   margin: 0 auto;
 } 
 
+body {
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack children vertically */
+}
+
+
 main {
   flex: 1 ; 
 }
@@ -339,11 +345,14 @@ a:hover {
 }
 
 footer {
-  margin-top: 0; 
+  text-align: left;
+  bottom: 0; /* Align to the bottom */
+  left: 0; /* Align to the left */
+  right: 0; /* Align to the right */
   padding: 20px 0; 
   font-size: 13px;
-  background-color: #000; /* Optional: Set a background color */
-  color: #fff; /* Optional: Set text color */
+  background-color: #000; /* Set a background color */
+  color: #fff; /* Set text color */
 }
 
 hr {
